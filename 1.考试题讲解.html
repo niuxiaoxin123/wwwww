@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 50px;
+            height: 20px;
+            background: red;
+            cursor: pointer;
+        }
+
+        .second {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="first">
+    <!--<div></div>-->
+    <!---->
+
+
+    <div id="box">
+        <div></div>
+    </div>
+</div>
+<div class="second"></div>
+<div id="third"></div>
+<script>
+    var oBox = document.getElementById("box");
+    //    var sec = document.getElementsByClassName("second");
+    oBox.onclick = function () {
+        //console.log(sec.style)//Cannot set property 'background' of undefined
+//        sec.style.background = "red"
+        this.parentNode.nextElementSibling.style.background = "red"
+    }
+    //    var num = 10;
+    //    var str = "syy";
+    //    var bol = true;
+    // null undefined
+    // 引用数据类型： 函数数据类型 对象数据类型
+    // 函数数据类型 ： 函数
+    //    var  a = 12;
+    //    var obj = {name:a,age:8};
+    //    var ary = [12,"zhufeng",8,obj];
+    //    var reg = /^$/;
+    //    //Math  Date ...;
+    //    var  time = new Date();
+
+    // typeof : 返回一个字符串 typeof null-->"object" 空对象指针
+    // typeof 12 -->"number"
+    // 不能具体细分对象数据类型下的对象数组，都返回“object”
+
+    // instanceOf  : 检测某个实例是否属于某个类的方法
+    // constructor : 检测当前的构造函数
+    // Object.prototype.toString.call()
+
+    //arguments 是一个类数组 ,是对象数据类型的；
+    //var ary =[{}]
+
+    //document.getElementsByClassName("box")[0]
+    //    var op=document.createElement("p")
+    //      var op = document.getElementsByTagName("p")[0];
+    //    document.body.appendChild(op);
+    // insertBefore   replaceChild removeChild  cloneNode 默认是false
+    //    var oDiv=document.createElement("div");
+    //    document.body.replaceChild(oDiv,op)
+
+    // 节点：parentNode  childNodes  children  previousSibling
+    //previousElementSibling   nextSibling  nextElementSibling
+    // firstChild  lastChild
+    // 获取上一个哥哥的元素节点 兼容所有浏览器
+
+    //    function getBrother(curEle) {
+    //        var pre = oBox.previousSibling;
+    //        while(pre){
+    //            // 当不存在哥哥的元素节点那么最终得到null,while 循环结束；
+    //            if(pre.nodeType===1){
+    //                return pre;
+    //            }else{
+    //                pre = pre.previousSibling;
+    //                console.log(pre);
+    //            }
+    //        }
+    //    }
+    //    getBrother(oBox)
+    //    var ary  = [12,88,99]
+    //    ary.push(12);
+    //    push splice
+    //    ary.splice(ary.length,0,12)
+    //    console.log(ary);
+    //    ary[ary.length] =12;
+    // 数组的排序
+    //    ary.sort(function (a,b) {
+    //        return a-b;
+    //    })
+    //     slice(n,m)
+    //    Math.max()
+    // 任意数求和；
+
+//    function sum() {
+//        var result=0;
+//        for( var i=0;i<arguments.length;i++){
+//            var cur=Number(arguments[i]);
+//            if(!isNaN(cur)){
+//                result+=cur;
+//            }
+//        }
+//        return result;
+//    }
+//    console.log(sum(1, 2, 3, 4, 5, 6,"12px","14"));
+
+
+    //
+//    function sum(num) {
+//        if(num===0){
+//            return 0;
+//        }
+//        if(num%3===0&&num%5===0){
+//            return num +sum(num-1);
+//        }else{
+//            return sum(num-1)
+//        }
+//    }
+//    console.log(sum(100));
+//    Math.round(Math.random()*(9999-1000)+1000)
+
+
+    //
+    //var str = "0123456789";
+//    Math.round(Math.random*9)
+    var th = document.getElementById("third");
+    function code() {
+        var str = "";
+        for(var i=0;i<4;i++){
+            str+=Math.round(Math.random()*9);
+        };
+        th.innerHTML = str;
+    }
+    var a =setInterval(function () {
+        code();
+    },1000)
+    setTimeout(function () {
+        clearInterval(a);
+    },10000)
+
+
+    // number   string方法  布尔 数据类型的规律
+    // 数组的方法  DOM的节点和属性   动态操作DOM方法  Math  Date
+    // git
+
+
+</script>
+</body>
+</html>
